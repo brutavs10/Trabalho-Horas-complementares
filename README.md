@@ -1,9 +1,9 @@
 # CRUD MVC com PHP e PDO
 
 #### Versão 1.0 
-![N|Solid](https://raw.githubusercontent.com/mfabiodias/php-pdo-crud/master/view/images/layout/upsert-products.png)
+![N|Solid](https://raw.githubusercontent.com/mfabiodias/php-pdo-crud-mysql/master/view/images/layout/upsert-products.png)
 <br />
-![N|Solid](https://raw.githubusercontent.com/mfabiodias/php-pdo-crud/master/view/images/layout/list-products.png)
+![N|Solid](https://raw.githubusercontent.com/mfabiodias/php-pdo-crud-mysql/master/view/images/layout/list-products.png)
   - Requer PHP >= 7 e MySQL >= 5.6;
   - Contemplam as quatro operações básicas (CREATE, READ, UPDATE, DELETE);
   - Utilizado padrão MVC para criação do CRUD;
