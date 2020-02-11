@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>10% OFF</th>
+            <th>
+                <form method="POST" >
+                    <input type="hidden" name="crud" value="insert" >
+                    <input type="submit" value="Novo Produto" class="btn btn-sm btn-outline-success" >
+                </form>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{list_items}}
+    </tbody>
+</table>
