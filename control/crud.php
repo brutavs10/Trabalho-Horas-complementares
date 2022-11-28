@@ -14,19 +14,25 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
 
     if($_POST['crud'] == 'insert')
     {
-        if(isset($_POST['product']) && isset($_POST['price']))
+        if(isset($_POST['Course']) && isset($_POST['Year'])  && isset($_POST['Semester']) && isset($_POST['Complementary Activity']) && isset($_POST['Registration']) && isset($_POST['student']) && isset($_POST['Workload']))
         {
-            $sql = "INSERT INTO produto (nome, valor) VALUES (?, ?)";
+            $sql = "INSERT INTO produto (nome, valor, valor, nome, valor, nome, valor) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $prm = [
-                $_POST['product'],
-                $_POST['price'],
+               $_POST['Course'],
+                $_POST['Year'],
+                $_POST['Semester'],
+                $_POST['Complementary Activity'],
+                $_POST['Registration'],
+                $_POST['Student'],
+                $_POST['Workload'],
+                
             ];
             $prod = $conn->insert($sql, $prm);
             
-            $_SESSION['msg'] = $prod !== false ? 'Produto cadastrado com sucesso!' : $prod;
+            $_SESSION['msg'] = $prod !== false ? 'Aluno cadastrado com sucesso!' : $prod;
 
             # Redirect to list products
-            $prod = $conn->select("SELECT * FROM produto");
+            $prod = $conn->select("SELECT * FROM Aluno");
             $crud = 'select';
         }
     }
@@ -34,44 +40,49 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
     {
         if(isset($_POST['id_update']))
         {
-            $sql = "SELECT * FROM produto WHERE id_produto = ?";
+            $sql = "SELECT * FROM produto WHERE id_Aluno = ?";
             $prm = [
                 $_POST['id_update'],
             ];
             $prod = $conn->select($sql, $prm);
             $uprod = $prod[0];
         }
-        else if(isset($_POST['id']) && isset($_POST['product']) && isset($_POST['price']))
-        {
-            $sql = "UPDATE produto SET nome = ?, valor = ? WHERE id_produto = ?";
+        else if(isset($_POST['Course']) && isset($_POST['Year'])  && isset($_POST['Semester']) && isset($_POST['Complementary Activity']) && isset($_POST['Registration']) && isset($_POST['student']) && isset($_POST['Workload']))
+         {
+            $sql = "UPDATE Aluno SET nome = ?, valor = ?, valor = ?, nome = ?, valor = ?, nome = ?, valor = ? WHERE id_produto = ?";
             $prm = [
-                $_POST['product'],
-                $_POST['price'],
-                $_POST['id'],
+               $_POST['Course'],
+               $_POST['Year'],
+               $_POST['Semester'],
+               $_POST['Complementary Activity'],
+               $_POST['Registration'],
+               $_POST['Student'],
+               $_POST['Workload'],
+               $_POST['id'],
             ];
             $prod = $conn->update($sql, $prm);
             $uprod = [
                 "id_produto" => $_POST['id'],
-                "nome"       => $_POST['product'],
-                "valor"      => $_POST['price'],
+                "nome"       => $_POST['Course'], $_POST['Complementary Activity'], $_POST['Student'],
+                "valor"      => $_POST['Year'], $_POST['Semester'], $_POST['Registration'], $_POST['Workload'],
                 ];
             
-            $_SESSION['msg'] = $prod !== false ? 'Produto atualizado com sucesso!' : $prod;
+            $_SESSION['msg'] = $prod !== false ? 'Aluno atualizado com sucesso!' : $prod;
             
             # Redirect to list products
-            $prod = $conn->select("SELECT * FROM produto");
+            $prod = $conn->select("SELECT * FROM Aluno");
             $crud = 'select';
         }
     }
     else if($_POST['crud'] == 'delete')
     {
-        $sql = "DELETE FROM produto WHERE id_produto = ?";
+        $sql = "DELETE FROM Aluno WHERE id_produto = ?";
         $prm = [
             $_POST['id_delete'],
         ];
         $prod = $conn->delete($sql, $prm);
         
-        $_SESSION['msg'] = $prod !== false ? 'Produto excluído com sucesso!' : $prod;
+        $_SESSION['msg'] = $prod !== false ? 'Aluno excluído com sucesso!' : $prod;
 
         # Redirect to list products
         $prod = $conn->select("SELECT * FROM produto");
@@ -80,7 +91,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
 }
 else
 {
-    $prod = $conn->select("SELECT * FROM produto");
+    $prod = $conn->select("SELECT * FROM Aluno");
 }
 
 // echo "<pre>";
