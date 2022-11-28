@@ -49,20 +49,22 @@ function get_replacement($type)
 
         if($crud == 'select')
         {
-            return ['{{alert-msg}}' => $alert, '{{title}}' => 'Listagem de Produtos', '{{h1}}' => 'Produtos']; 
-        }
+            return ['{{alert-msg}}' => $alert, '{{title}}' => 'Listagem de Alunos', '{{h1}} => 'Alunos'];     
+			}
+            
         else if($crud == 'insert')
         {
-            return ['{{alert-msg}}' => $alert, '{{title}}' => 'CRUD - Insert', '{{h1}}' => 'Inserir Produto']; 
-        }
+            return ['{{alert-msg}}' => $alert, '{{title}}' => 'CRUD - Insert', '{{h1}}' => 'Inserir Alunos'];     
+            }
+            
         else if($crud == 'update')
         {
-            return ['{{alert-msg}}' => $alert, '{{title}}' => 'CRUD - Update', '{{h1}}' => 'Atualizar Produto']; 
-        }
-    }
+            return ['{{alert-msg}}' => $alert, '{{title}}' => 'CRUD - Update', '{{h1}}' => 'Atualizar Alunos']; 
+			}
+                    
     else if($type == 'insert')
     {
-        return ['{{crud}}' => 'insert', '{{id}}' => '', '{{product}}' => '', '{{price}}' => '', '{{btn}}' => 'Cadastrar']; 
+        return ['{{crud}}' => 'insert', '{{id}}' => '', '{{Aluno}}' => '', '{{price}}' => '',  '{{price}}' => '', '{{price}}' => '', '{{price}}' => '', '{{price}}' => '', '{{btn}}' => 'Cadastrar']; 
     }
     else if($type == 'update')
     {
