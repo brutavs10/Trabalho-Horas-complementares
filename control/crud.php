@@ -32,7 +32,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
             $_SESSION['msg'] = $prod !== false ? 'Aluno cadastrado com sucesso!' : $prod;
 
             # Redirect to list products
-            $prod = $conn->select("SELECT * FROM Aluno");
+            $prod = $conn->select("SELECT * FROM produto");
             $crud = 'select';
         }
     }
@@ -70,7 +70,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
             $_SESSION['msg'] = $prod !== false ? 'Aluno atualizado com sucesso!' : $prod;
             
             # Redirect to list products
-            $prod = $conn->select("SELECT * FROM Aluno");
+            $prod = $conn->select("SELECT * FROM produto");
             $crud = 'select';
         }
     }
@@ -85,13 +85,13 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
         $_SESSION['msg'] = $prod !== false ? 'Aluno excluído com sucesso!' : $prod;
 
         # Redirect to list products
-        $prod = $conn->select("SELECT * FROM Aluno");
+        $prod = $conn->select("SELECT * FROM produto");
         $crud = 'select';
     }
 }
 else
 {
-    $prod = $conn->select("SELECT * FROM Aluno");
+    $prod = $conn->select("SELECT * FROM produto");
 }
 
 // echo "<pre>";
