@@ -49,7 +49,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
         }
         else if(isset($_POST['Course']) && isset($_POST['Year'])  && isset($_POST['Semester']) && isset($_POST['Complementary Activity']) && isset($_POST['Registration']) && isset($_POST['student']) && isset($_POST['Workload']))
          {
-            $sql = "UPDATE Aluno SET nome = ?, valor = ?, valor = ?, nome = ?, valor = ?, nome = ?, valor = ? WHERE id_produto = ?";
+            $sql = "UPDATE Aluno SET nome = ?, valor = ?, valor = ?, nome = ?, valor = ?, nome = ?, valor = ? WHERE id_Aluno = ?";
             $prm = [
                $_POST['Course'],
                $_POST['Year'],
@@ -62,7 +62,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
             ];
             $prod = $conn->update($sql, $prm);
             $uprod = [
-                "id_produto" => $_POST['id'],
+                "id_Aluno" => $_POST['id'],
                 "nome"       => $_POST['Course'], $_POST['Complementary Activity'], $_POST['Student'],
                 "valor"      => $_POST['Year'], $_POST['Semester'], $_POST['Registration'], $_POST['Workload'],
                 ];
