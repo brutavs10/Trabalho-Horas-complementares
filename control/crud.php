@@ -40,7 +40,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
     {
         if(isset($_POST['id_update']))
         {
-            $sql = "SELECT * FROM produto WHERE id_Aluno = ?";
+            $sql = "SELECT * FROM produto WHERE id_produto = ?";
             $prm = [
                 $_POST['id_update'],
             ];
@@ -62,7 +62,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
             ];
             $prod = $conn->update($sql, $prm);
             $uprod = [
-                "id_Aluno" => $_POST['id'],
+                "id_produto" => $_POST['id'],
                 "nome"       => $_POST['Course'], $_POST['Complementary Activity'], $_POST['Student'],
                 "valor"      => $_POST['Year'], $_POST['Semester'], $_POST['Registration'], $_POST['Workload'],
                 ];
@@ -85,7 +85,7 @@ if(isset($_POST['crud']) && $_POST['crud'] != 'select')
         $_SESSION['msg'] = $prod !== false ? 'Aluno excluído com sucesso!' : $prod;
 
         # Redirect to list products
-        $prod = $conn->select("SELECT * FROM produto");
+        $prod = $conn->select("SELECT * FROM Aluno");
         $crud = 'select';
     }
 }
