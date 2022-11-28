@@ -64,7 +64,7 @@ function get_replacement($type)
                     
     else if($type == 'insert')
     {
-        return ['{{crud}}' => 'insert', '{{id}}' => '', '{{Aluno}}' => '', '{{price}}' => '',  '{{price}}' => '', '{{price}}' => '', '{{price}}' => '', '{{price}}' => '', '{{btn}}' => 'Cadastrar']; 
+        return ['{{crud}}' => 'insert', '{{id}}' => '', '{{Course}}' => '', '{{Year}}' => '',  '{{Semester}}' => '', '{{Complementary Activity}}' => '', '{{Registration}}' => '', '{{Student}}' => '', '{{Worload}}' =>, '{{btn}}' => 'Cadastrar']; 
     }
     else if($type == 'update')
     {
