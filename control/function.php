@@ -97,13 +97,13 @@ function mount_replacement()
     {
         array_push($data, [
             '{{id}}'       => $rtn['id_produto'],
-             '{{Course}}'  => $rtn['nome'],
-	     '{{Year}}'    => number_format($rtn['valor'], 2, ',', '.'),
-	     '{{Semester}}'    => number_format($rtn['valor'], 2, ',', '.'),
-	     '{{Complementary Activity}}' => $rtn['nome'],
-	     '{{Registration}}'    => number_format($rtn['valor'], 2, ',', '.'),
-	     '{{Student}}' => $rtn['nome'],
-	     '{{Workload}}'    => number_format($rtn['valor'], 2, ',', '.')
+             '{{Course}}'  => $rtn['Curso'],
+	     '{{Year}}'    => number_format($rtn['Ano'], 2, ',', '.'),
+	     '{{Semester}}'    => number_format($rtn['Semestre'], 2, ',', '.'),
+	     '{{Complementary Activity}}' => $rtn['Atividade Complementar'],
+	     '{{Registration}}'    => number_format($rtn['Matricula'], 2, ',', '.'),
+	     '{{Student}}' => $rtn['Aluno'],
+	     '{{Workload}}'    => number_format($rtn['Periodo'], 2, ',', '.')
 	 ]);
     }
 
