@@ -103,7 +103,7 @@ function mount_replacement()
 	     '{{Complementary Activity}}' => $rtn['Atividade Complementar'],
 	     '{{Registration}}'    => number_format($rtn['Matricula'], 2, ',', '.'),
 	     '{{Student}}' => $rtn['Aluno'],
-	     '{{Workload}}'    => number_format($rtn['Periodo'], 2, ',', '.')
+	     '{{Workload}}'    => number_format($rtn['Carga Horaria'], 2, ',', '.')
 	 ]);
     }
 
