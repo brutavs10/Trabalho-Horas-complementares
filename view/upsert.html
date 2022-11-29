@@ -1,13 +1,52 @@
 <form id="form-upsert" action="" method="POST">
     <div class="form-group">
-        <label for="ipt_name">Produto</label>
+        <label for="ipt_name">Curso</label>
         <input type="hidden" name="crud" value="{{crud}}" >
         <input type="hidden" name="id" value="{{id}}" required="required">
-        <input type="text" name="product" id="ipt_name" class="form-control" value="{{product}}" required="required">
+        <input type="text" name="course" id="ipt_name" class="form-control" value="{{course}}" required="required">
     </div>
     <div class="form-group">
-        <label for="ipt_price">Valor</label>
-        <input type="number" name="price" id="ipt_price" min="0" step="0.01" class="form-control" value="{{price}}">
+        <label for="ipt_name">Ano</label>
+        <input type="hidden" name="crud" value="{{crud}}" >
+        <input type="hidden" name="id" value="{{id}}" required="required">
+        <input type="text" name="Year" id="ipt_name" class="form-control" value="{{Year}}" required="required">
+    </div>
+    <div class="form-group">
+        <label for="ipt_name">Semestre</label>
+        <input type="hidden" name="crud" value="{{crud}}" >
+        <input type="hidden" name="id" value="{{id}}" required="required">
+        <input type="text" name="Semester" id="ipt_name" class="form-control" value="{{Semester}}" required="required">
+    </div>
+    <div class="form-group">
+        <label for="ipt_name">Atividade Complementar</label>
+        <input type="hidden" name="crud" value="{{crud}}" >
+        <input type="hidden" name="id" value="{{id}}" required="required">
+        <input type="text" name="Complementary Activity" id="ipt_name" class="form-control" value="{{Complementary Activity}}" required="required">
+    </div>
+    
+    <div class="form-group">
+        <label for="ipt_name">Aluno</label>
+        <input type="hidden" name="crud" value="{{crud}}" >
+        <input type="hidden" name="id" value="{{id}}" required="required">
+        <input type="text" name="course" id="ipt_name" class="form-control" value="{{course}}" required="required">
+    </div>
+    
+    <div class="form-group">
+        <label for="ipt_name">Matricula</label>
+        <input type="hidden" name="crud" value="{{crud}}" >
+        <input type="hidden" name="id" value="{{id}}" required="required">
+        <input type="text" name="Registration" id="ipt_name" class="form-control" value="{{Registration}}" required="required">
+    </div>
+    
+    <div class="form-group">
+        <label for="ipt_name">Aluno</label>
+        <input type="hidden" name="crud" value="{{crud}}" >
+        <input type="hidden" name="id" value="{{id}}" required="required">
+        <input type="text" name="Student" id="ipt_name" class="form-control" value="{{Student}}" required="required">
+    </div>
+    <div class="form-group">
+        <label for="ipt_price">Carga Horaria</label>
+        <input type="number" name="Workload" id="ipt_price" class="form-control" value="{{Workload}}">
     </div>
 </form>
 
