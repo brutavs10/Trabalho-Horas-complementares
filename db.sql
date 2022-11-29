@@ -7,24 +7,15 @@ USE php_crud;
 -- CREATE TABLE
 CREATE TABLE IF NOT EXISTS produto (
     id_produto INT NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(50) NULL,
-    valor DECIMAL(10,2) NULL,
-    valor_desconto DECIMAL(10,2) NULL,
+    Curso VARCHAR(50) NULL,    
+    Ano DECIMAL(10,2) NULL,
+    Semestre DECIMAL(10,2) NULL,
+    Atividade Complementar VARCHAR(50) NULL,
+    Matricula DECIMAL(10,2) NULL,
+    Aluno VARCHAR(50) NULL,
+    Carga horaria DECIMAL(10,2) NULL,
     PRIMARY KEY (id_produto)
 );
-
--- CREATE TRIGGER ON INSERT
-CREATE TRIGGER tr_i_produto_10_porcento 
-BEFORE INSERT ON produto
-FOR EACH ROW
-SET NEW.valor_desconto = NEW.valor * 0.9;
-
--- CREATE TRIGGER ON UPDATE
-CREATE TRIGGER tr_u_produto_10_porcento 
-BEFORE UPDATE ON produto
-FOR EACH ROW
-SET NEW.valor_desconto = NEW.valor * 0.9;
-
 
 ##############################
 ########   OPTIONAL   ########
