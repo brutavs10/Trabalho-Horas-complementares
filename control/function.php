@@ -64,15 +64,20 @@ function get_replacement($type)
                     
     else if($type == 'insert')
     {
-        return ['{{crud}}' => 'insert', '{{id}}' => '', '{{Course}}' => '', '{{Year}}' => '',  '{{Semester}}' => '', '{{Complementary Activity}}' => '', '{{Registration}}' => '', '{{Student}}' => '', '{{Worload}}' =>, '{{btn}}' => 'Cadastrar']; 
+        return ['{{crud}}' => 'insert', '{{id}}' => '', '{{Course}}' => '', '{{Year}}' => '',  '{{Semester}}' => '', '{{Complementary Activity}}' => '', '{{Registration}}' => '', '{{Student}}' => '', '{{Workload}}' =>, '{{btn}}' => 'Cadastrar']; 
     }
     else if($type == 'update')
     {
         $id    = isset($uprod['id_produto']) ? $uprod['id_produto'] : '';
-        $nome  = isset($uprod['nome']) ? $uprod['nome'] : '';
-        $valor = isset($uprod['valor']) ? $uprod['valor'] : '';
+        $Curso  = isset($uprod['curso']) ? $uprod['curso'] : '';
+	$Ano  = isset($uprod['valor']) ? $uprod['valor'] : '';
+	$Semestre  = isset($uprod['valor']) ? $uprod['valor'] : '';
+	$Atividade Complementar  = isset($uprod['nome']) ? $uprod['nome'] : '';
+	$Matricula  = isset($uprod['valor']) ? $uprod['valor'] : '';
+	$Aluno  = isset($uprod['nome']) ? $uprod['nome'] : '';
+        $Periodo = isset($uprod['valor']) ? $uprod['valor'] : '';
 
-        return ['{{crud}}' => 'update', '{{id}}' => $id, '{{product}}' => $nome, '{{price}}' => $valor, '{{btn}}' => 'Atualizar']; 
+         return ['{{crud}}' => 'insert', '{{id}}' => '', '{{Course}}' => '', '{{Year}}' => '',  '{{Semester}}' => '', '{{Complementary Activity}}' => '', '{{Registration}}' => '', '{{Student}}' => '', '{{Workload}}' =>, '{{btn}}' => 'Atualizar']; 
     }
     else if($type == 'list_item')
     {
@@ -92,10 +97,14 @@ function mount_replacement()
     {
         array_push($data, [
             '{{id}}'       => $rtn['id_produto'],
-            '{{product}}'  => $rtn['nome'],
-            '{{price}}'    => number_format($rtn['valor'], 2, ',', '.'),
-            '{{discount}}' => number_format($rtn['valor_desconto'], 2, ',', '.'),
-        ]);
+             '{{Course}}'  => $rtn['nome'],
+	     '{{Year}}'    => number_format($rtn['valor'], 2, ',', '.'),
+	     '{{Semester}}'    => number_format($rtn['valor'], 2, ',', '.'),
+	     '{{Complementary Activity}}' => $rtn['nome'],
+	     '{{Registration}}'    => number_format($rtn['valor'], 2, ',', '.'),
+	     '{{Student}}' => $rtn['nome'],
+	     '{{Workload}}'    => number_format($rtn['valor'], 2, ',', '.')
+	 ]);
     }
 
     return $data;
